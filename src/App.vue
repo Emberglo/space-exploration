@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <navbar/>
+  <Apod/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { computed } from 'vue'
+import { AppState } from './AppState'
+import navbar from './components/Navbar.vue'
+import Apod from './components/Apod.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'app',
+  setup () {
+    return {
+      appState: computed(() => AppState)
+    }
+  },
+  components: { navbar, Apod }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body{
+    background-color: #dfafcf;
+  }
+  .navbar{
+    margin: 0;
+    padding: 0;
+  }
 </style>
+
+// NASA API Info
+// hE1aHdFhQaTc5wQWzQhJv4VWT3YFJObTsAs4rtIU
+// Account Email: rccarpenter@outlook.com
+// Account ID: 7c98b53c-3890-403f-ae71-5b23e0aab870
